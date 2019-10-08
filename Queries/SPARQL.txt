@@ -1,0 +1,672 @@
+
+
+
+
+Q1:
+
+
+ PREFIX  bsbm: <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/> PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX  bsbm-inst: <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/> SELECT DISTINCT  ?product ?label  WHERE   { ?product  rdfs:label            ?label ;              rdf:type              bsbm-inst:ProductType8 ;               bsbm:productFeature   bsbm-inst:ProductFeature9 ;               bsbm:productFeature   bsbm-inst:ProductFeature5 ;               bsbm:productPropertyNumeric1  ?value1     FILTER ( ?value1 > 136 )   } ORDER BY ?label LIMIT   10
+
+
+
+
+Q2:
+
+ PREFIX  bsbm: <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/> PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX  bsbm-inst: <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/> PREFIX  dc:   <http://purl.org/dc/elements/1.1/>  SELECT  ?label ?comment ?producer ?productFeature ?propertyTextual1 ?propertyTextual2 ?propertyTextual3 ?propertyNumeric1 ?propertyNumeric2 ?propertyTextual4 ?propertyTextual5 ?propertyNumeric4    WHERE   { <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/dataFromProducer2/Product72>               rdfs:label            ?label ;               rdfs:comment          ?comment ;               bsbm:producer         ?p .    ?p        rdfs:label            ?producer .    <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/dataFromProducer2/Product72>               dc:publisher          ?p ;               bsbm:productFeature   ?f .    ?f        rdfs:label            ?productFeature .    <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/dataFromProducer2/Product72>               bsbm:productPropertyTextual1  ?propertyTextual1 ;               bsbm:productPropertyTextual2  ?propertyTextual2 ;               bsbm:productPropertyTextual3  ?propertyTextual3 ;               bsbm:productPropertyNumeric1  ?propertyNumeric1 ;               bsbm:productPropertyNumeric2  ?propertyNumeric2     OPTIONAL       { <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/dataFromProducer2/Product72>                   bsbm:productPropertyTextual4  ?propertyTextual4       }     OPTIONAL       { <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/dataFromProducer2/Product72>                   bsbm:productPropertyTextual5  ?propertyTextual5       }     OPTIONAL       { <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/dataFromProducer2/Product72>                   bsbm:productPropertyNumeric4  ?propertyNumeric4       }   }     
+
+
+
+
+Q3:
+
+ PREFIX  bsbm: <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/> PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX  bsbm-inst: <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/> PREFIX  dc:   <http://purl.org/dc/elements/1.1/>  SELECT  ?label ?comment ?producer ?productFeature ?propertyTextual1 ?propertyTextual2 ?propertyTextual3 ?propertyNumeric1 ?propertyNumeric2 ?propertyTextual4 ?propertyTextual5 ?propertyNumeric4    WHERE   { <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/dataFromProducer1/Product16>               rdfs:label            ?label ;               rdfs:comment          ?comment ;               bsbm:producer         ?p .    ?p        rdfs:label            ?producer .    <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/dataFromProducer1/Product16>               dc:publisher          ?p ;               bsbm:productFeature   ?f .    ?f        rdfs:label            ?productFeature .    <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/dataFromProducer1/Product16>               bsbm:productPropertyTextual1  ?propertyTextual1 ;               bsbm:productPropertyTextual2  ?propertyTextual2 ;               bsbm:productPropertyTextual3  ?propertyTextual3 ;               bsbm:productPropertyNumeric1  ?propertyNumeric1 ;               bsbm:productPropertyNumeric2  ?propertyNumeric2     OPTIONAL       { <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/dataFromProducer1/Product16>                   bsbm:productPropertyTextual4  ?propertyTextual4       }     OPTIONAL       { <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/dataFromProducer1/Product16>                   bsbm:productPropertyTextual5  ?propertyTextual5       }     OPTIONAL       { <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/dataFromProducer1/Product16>                   bsbm:productPropertyNumeric4  ?propertyNumeric4       }   }    
+
+
+
+Q4:
+  
+ PREFIX  bsbm: <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/> PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX  bsbm-inst: <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/>  SELECT  ?product ?label    WHERE   { ?product  rdfs:label            ?label ;               rdf:type              bsbm-inst:ProductType12 ;               bsbm:productFeature   bsbm-inst:ProductFeature63 ;               bsbm:productPropertyNumeric1  ?p1     FILTER ( ?p1 > 156 )     ?product  bsbm:productPropertyNumeric3  ?p3     FILTER ( ?p3 < 152 )     OPTIONAL       { ?product  bsbm:productFeature  bsbm-inst:ProductFeature53 ;                   rdfs:label           ?testVar       } FILTER ( ! bound(?testVar) )   } ORDER BY ?label LIMIT   10       
+
+
+Q5:
+
+ PREFIX  bsbm: <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/> PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX  bsbm-inst: <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/> PREFIX  dc:   <http://purl.org/dc/elements/1.1/>  SELECT  ?label ?comment ?producer ?productFeature ?propertyTextual1 ?propertyTextual2 ?propertyTextual3 ?propertyNumeric1 ?propertyNumeric2 ?propertyTextual4 ?propertyTextual5 ?propertyNumeric4    WHERE   { <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/dataFromProducer1/Product37>               rdfs:label            ?label ;               rdfs:comment          ?comment ;               bsbm:producer         ?p .    ?p        rdfs:label            ?producer .    <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/dataFromProducer1/Product37>               dc:publisher          ?p ;               bsbm:productFeature   ?f .    ?f        rdfs:label            ?productFeature .    <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/dataFromProducer1/Product37>               bsbm:productPropertyTextual1  ?propertyTextual1 ;               bsbm:productPropertyTextual2  ?propertyTextual2 ;               bsbm:productPropertyTextual3  ?propertyTextual3 ;               bsbm:productPropertyNumeric1  ?propertyNumeric1 ;               bsbm:productPropertyNumeric2  ?propertyNumeric2     OPTIONAL       { <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/dataFromProducer1/Product37>                   bsbm:productPropertyTextual4  ?propertyTextual4       }     OPTIONAL       { <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/dataFromProducer1/Product37>                   bsbm:productPropertyTextual5  ?propertyTextual5       }     OPTIONAL       { <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/dataFromProducer1/Product37>                   bsbm:productPropertyNumeric4  ?propertyNumeric4       }   }      
+
+
+
+Q6:
+
+ PREFIX  bsbm: <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/> PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX  bsbm-inst: <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/> PREFIX  dc:   <http://purl.org/dc/elements/1.1/>  SELECT  ?label ?comment ?producer ?productFeature ?propertyTextual1 ?propertyTextual2 ?propertyTextual3 ?propertyNumeric1 ?propertyNumeric2 ?propertyTextual4 ?propertyTextual5 ?propertyNumeric4    WHERE   { <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/dataFromProducer2/Product93>               rdfs:label            ?label ;               rdfs:comment          ?comment ;               bsbm:producer         ?p .    ?p        rdfs:label            ?producer .    <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/dataFromProducer2/Product93>               dc:publisher          ?p ;               bsbm:productFeature   ?f .    ?f        rdfs:label            ?productFeature .    <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/dataFromProducer2/Product93>               bsbm:productPropertyTextual1  ?propertyTextual1 ;               bsbm:productPropertyTextual2  ?propertyTextual2 ;               bsbm:productPropertyTextual3  ?propertyTextual3 ;               bsbm:productPropertyNumeric1  ?propertyNumeric1 ;               bsbm:productPropertyNumeric2  ?propertyNumeric2     OPTIONAL       { <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/dataFromProducer2/Product93>                   bsbm:productPropertyTextual4  ?propertyTextual4       }     OPTIONAL       { <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/dataFromProducer2/Product93>                   bsbm:productPropertyTextual5  ?propertyTextual5       }     OPTIONAL       { <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/dataFromProducer2/Product93>                   bsbm:productPropertyNumeric4  ?propertyNumeric4       }   }       
+
+
+
+Q7:
+
+ PREFIX  bsbm: <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/> PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX  bsbm-inst: <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/>  SELECT DISTINCT  ?product ?label ?propertyTextual    WHERE   {   { ?product  rdfs:label            ?label ;                   rdf:type              bsbm-inst:ProductType7 ;                   bsbm:productFeature   bsbm-inst:ProductFeature234 ;                   bsbm:productFeature   bsbm-inst:ProductFeature268 ;                   bsbm:productPropertyTextual1  ?propertyTextual ;                   bsbm:productPropertyNumeric1  ?p1         FILTER ( ?p1 > 457 )       }     UNION       { ?product  rdfs:label            ?label ;                   rdf:type              bsbm-inst:ProductType7 ;                   bsbm:productFeature   bsbm-inst:ProductFeature234 ;                   bsbm:productFeature   bsbm-inst:ProductFeature269 ;                   bsbm:productPropertyTextual1  ?propertyTextual ;                   bsbm:productPropertyNumeric2  ?p2         FILTER ( ?p2 > 488 )       }   } ORDER BY ?label OFFSET  5 LIMIT   10      
+
+
+
+Q8:
+
+ PREFIX  bsbm: <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/> PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX  bsbm-inst: <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/> PREFIX  dc:   <http://purl.org/dc/elements/1.1/>  SELECT  ?label ?comment ?producer ?productFeature ?propertyTextual1 ?propertyTextual2 ?propertyTextual3 ?propertyNumeric1 ?propertyNumeric2 ?propertyTextual4 ?propertyTextual5 ?propertyNumeric4    WHERE   { <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/dataFromProducer1/Product55>               rdfs:label            ?label ;               rdfs:comment          ?comment ;               bsbm:producer         ?p .    ?p        rdfs:label            ?producer .    <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/dataFromProducer1/Product55>               dc:publisher          ?p ;               bsbm:productFeature   ?f .    ?f        rdfs:label            ?productFeature .    <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/dataFromProducer1/Product55>               bsbm:productPropertyTextual1  ?propertyTextual1 ;               bsbm:productPropertyTextual2  ?propertyTextual2 ;               bsbm:productPropertyTextual3  ?propertyTextual3 ;               bsbm:productPropertyNumeric1  ?propertyNumeric1 ;               bsbm:productPropertyNumeric2  ?propertyNumeric2     OPTIONAL       { <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/dataFromProducer1/Product55>                   bsbm:productPropertyTextual4  ?propertyTextual4       }     OPTIONAL       { <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/dataFromProducer1/Product55>                   bsbm:productPropertyTextual5  ?propertyTextual5       }     OPTIONAL       { <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/dataFromProducer1/Product55>                   bsbm:productPropertyNumeric4  ?propertyNumeric4       }   }       
+
+
+
+
+
+Q9:
+
+ PREFIX  bsbm: <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/> PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX  bsbm-inst: <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/> PREFIX  dc:   <http://purl.org/dc/elements/1.1/>  SELECT  ?label ?comment ?producer ?productFeature ?propertyTextual1 ?propertyTextual2 ?propertyTextual3 ?propertyNumeric1 ?propertyNumeric2 ?propertyTextual4 ?propertyTextual5 ?propertyNumeric4    WHERE   { <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/dataFromProducer1/Product11>               rdfs:label            ?label ;               rdfs:comment          ?comment ;               bsbm:producer         ?p .    ?p        rdfs:label            ?producer .    <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/dataFromProducer1/Product11>               dc:publisher          ?p ;               bsbm:productFeature   ?f .    ?f        rdfs:label            ?productFeature .    <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/dataFromProducer1/Product11>               bsbm:productPropertyTextual1  ?propertyTextual1 ;               bsbm:productPropertyTextual2  ?propertyTextual2 ;               bsbm:productPropertyTextual3  ?propertyTextual3 ;               bsbm:productPropertyNumeric1  ?propertyNumeric1 ;               bsbm:productPropertyNumeric2  ?propertyNumeric2     OPTIONAL       { <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/dataFromProducer1/Product11>                   bsbm:productPropertyTextual4  ?propertyTextual4       }     OPTIONAL       { <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/dataFromProducer1/Product11>                   bsbm:productPropertyTextual5  ?propertyTextual5       }     OPTIONAL       { <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/dataFromProducer1/Product11>                   bsbm:productPropertyNumeric4  ?propertyNumeric4       }   }      
+
+
+
+
+Q10:
+
+ PREFIX  bsbm: <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/> PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>  SELECT DISTINCT  ?product ?productLabel    WHERE   { ?product  rdfs:label  ?productLabel     FILTER ( <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/dataFromProducer2/Product90> != ?product )     <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/dataFromProducer2/Product90>               bsbm:productFeature   ?prodFeature .    ?product  bsbm:productFeature   ?prodFeature .    <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/dataFromProducer2/Product90>               bsbm:productPropertyNumeric1  ?origProperty1 .    ?product  bsbm:productPropertyNumeric1  ?simProperty1     FILTER ( ( ?simProperty1 < ( ?origProperty1 + 120 ) ) && ( ?simProperty1 > ( ?origProperty1 - 120 ) ) )     <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/dataFromProducer2/Product90>               bsbm:productPropertyNumeric2  ?origProperty2 .    ?product  bsbm:productPropertyNumeric2  ?simProperty2     FILTER ( ( ?simProperty2 < ( ?origProperty2 + 170 ) ) && ( ?simProperty2 > ( ?origProperty2 - 170 ) ) )   } ORDER BY ?productLabel LIMIT   5       
+
+
+
+
+Q11:
+
+ PREFIX  rev:  <http://purl.org/stuff/rev#> PREFIX  bsbm: <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/> PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX  foaf: <http://xmlns.com/foaf/0.1/> PREFIX  dc:   <http://purl.org/dc/elements/1.1/>  SELECT  ?productLabel ?offer ?price ?vendor ?vendorTitle ?review ?revTitle ?reviewer ?revName ?rating1 ?rating2    WHERE   { <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/dataFromProducer1/Product1>               rdfs:label  ?productLabel     OPTIONAL       { ?offer   bsbm:product  <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/dataFromProducer1/Product1> ;                  bsbm:price    ?price ;                  bsbm:vendor   ?vendor .        ?vendor  rdfs:label    ?vendorTitle ;                  bsbm:country  <http://downlode.org/rdf/iso-3166/countries#DE> .        ?offer   dc:publisher  ?vendor ;                  bsbm:validTo  ?date         FILTER ( ?date > "2008-06-20T00:00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> )       }     OPTIONAL       { ?review   bsbm:reviewFor  <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/dataFromProducer1/Product1> ;                   rev:reviewer    ?reviewer .        ?reviewer  foaf:name      ?revName .        ?review   dc:title        ?revTitle         OPTIONAL           { ?review  bsbm:rating1  ?rating1 }         OPTIONAL           { ?review  bsbm:rating2  ?rating2 }       }   }      
+
+
+
+Q12:
+
+ PREFIX  rev:  <http://purl.org/stuff/rev#> PREFIX  bsbm: <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/> PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX  foaf: <http://xmlns.com/foaf/0.1/> PREFIX  dc:   <http://purl.org/dc/elements/1.1/>  SELECT  ?productLabel ?offer ?price ?vendor ?vendorTitle ?review ?revTitle ?reviewer ?revName ?rating1 ?rating2    WHERE   { <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/dataFromProducer1/Product37>               rdfs:label  ?productLabel     OPTIONAL       { ?offer   bsbm:product  <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/dataFromProducer1/Product37> ;                  bsbm:price    ?price ;                  bsbm:vendor   ?vendor .        ?vendor  rdfs:label    ?vendorTitle ;                  bsbm:country  <http://downlode.org/rdf/iso-3166/countries#DE> .        ?offer   dc:publisher  ?vendor ;                  bsbm:validTo  ?date         FILTER ( ?date > "2008-06-20T00:00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> )       }     OPTIONAL       { ?review   bsbm:reviewFor  <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/dataFromProducer1/Product37> ;                   rev:reviewer    ?reviewer .        ?reviewer  foaf:name      ?revName .        ?review   dc:title        ?revTitle         OPTIONAL           { ?review  bsbm:rating1  ?rating1 }         OPTIONAL           { ?review  bsbm:rating2  ?rating2 }       }   }       
+
+
+Q13:
+
+ PREFIX  bsbm: <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/> PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>  SELECT DISTINCT  ?product ?productLabel    WHERE   { ?product  rdfs:label  ?productLabel     FILTER ( <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/dataFromProducer1/Product37> != ?product )     <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/dataFromProducer1/Product37>               bsbm:productFeature   ?prodFeature .    ?product  bsbm:productFeature   ?prodFeature .    <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/dataFromProducer1/Product37>               bsbm:productPropertyNumeric1  ?origProperty1 .    ?product  bsbm:productPropertyNumeric1  ?simProperty1     FILTER ( ( ?simProperty1 < ( ?origProperty1 + 120 ) ) && ( ?simProperty1 > ( ?origProperty1 - 120 ) ) )     <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/dataFromProducer1/Product37>               bsbm:productPropertyNumeric2  ?origProperty2 .    ?product  bsbm:productPropertyNumeric2  ?simProperty2     FILTER ( ( ?simProperty2 < ( ?origProperty2 + 170 ) ) && ( ?simProperty2 > ( ?origProperty2 - 170 ) ) )   } ORDER BY ?productLabel LIMIT   5       
+
+
+
+Q14:
+
+ PREFIX  rev:  <http://purl.org/stuff/rev#> PREFIX  bsbm: <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/> PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX  foaf: <http://xmlns.com/foaf/0.1/> PREFIX  dc:   <http://purl.org/dc/elements/1.1/>  SELECT  ?productLabel ?offer ?price ?vendor ?vendorTitle ?review ?revTitle ?reviewer ?revName ?rating1 ?rating2    WHERE   { <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/dataFromProducer1/Product54>               rdfs:label  ?productLabel     OPTIONAL       { ?offer   bsbm:product  <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/dataFromProducer1/Product54> ;                  bsbm:price    ?price ;                  bsbm:vendor   ?vendor .        ?vendor  rdfs:label    ?vendorTitle ;                  bsbm:country  <http://downlode.org/rdf/iso-3166/countries#DE> .        ?offer   dc:publisher  ?vendor ;                  bsbm:validTo  ?date         FILTER ( ?date > "2008-06-20T00:00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> )       }     OPTIONAL       { ?review   bsbm:reviewFor  <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/dataFromProducer1/Product54> ;                   rev:reviewer    ?reviewer .        ?reviewer  foaf:name      ?revName .        ?review   dc:title        ?revTitle         OPTIONAL           { ?review  bsbm:rating1  ?rating1 }         OPTIONAL           { ?review  bsbm:rating2  ?rating2 }       }   }     
+
+
+
+
+Q15:
+
+ PREFIX  rev:  <http://purl.org/stuff/rev#> PREFIX  bsbm: <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/> PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX  foaf: <http://xmlns.com/foaf/0.1/> PREFIX  dc:   <http://purl.org/dc/elements/1.1/>  SELECT  ?productLabel ?offer ?price ?vendor ?vendorTitle ?review ?revTitle ?reviewer ?revName ?rating1 ?rating2    WHERE   { <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/dataFromProducer1/Product28>               rdfs:label  ?productLabel     OPTIONAL       { ?offer   bsbm:product  <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/dataFromProducer1/Product28> ;                  bsbm:price    ?price ;                  bsbm:vendor   ?vendor .        ?vendor  rdfs:label    ?vendorTitle ;                  bsbm:country  <http://downlode.org/rdf/iso-3166/countries#DE> .        ?offer   dc:publisher  ?vendor ;                  bsbm:validTo  ?date         FILTER ( ?date > "2008-06-20T00:00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> )       }     OPTIONAL       { ?review   bsbm:reviewFor  <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/dataFromProducer1/Product28> ;                   rev:reviewer    ?reviewer .        ?reviewer  foaf:name      ?revName .        ?review   dc:title        ?revTitle         OPTIONAL           { ?review  bsbm:rating1  ?rating1 }         OPTIONAL           { ?review  bsbm:rating2  ?rating2 }       }   }       
+
+
+Q16:
+
+ PREFIX  bsbm: <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/> PREFIX  rev:  <http://purl.org/stuff/rev#> PREFIX  foaf: <http://xmlns.com/foaf/0.1/> PREFIX  dc:   <http://purl.org/dc/elements/1.1/>  SELECT  ?title ?text ?reviewDate ?reviewer ?reviewerName ?rating1 ?rating2 ?rating3 ?rating4    WHERE   { ?review  bsbm:reviewFor  <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/dataFromProducer2/Product78> ;              dc:title        ?title ;              rev:text        ?text     FILTER langMatches(lang(?text), "EN")     ?review   bsbm:reviewDate  ?reviewDate ;               rev:reviewer     ?reviewer .    ?reviewer  foaf:name       ?reviewerName     OPTIONAL       { ?review  bsbm:rating1  ?rating1 }     OPTIONAL       { ?review  bsbm:rating2  ?rating2 }     OPTIONAL       { ?review  bsbm:rating3  ?rating3 }     OPTIONAL       { ?review  bsbm:rating4  ?rating4 }   } ORDER BY DESC(?reviewDate) LIMIT   20       
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+PREFIX  rev:  <http://purl.org/stuff/rev#>  DESCRIBE ?x    WHERE   { <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/dataFromRatingSite1/Review194>               rev:reviewer  ?x   }     
+  
+PREFIX  rev:  <http://purl.org/stuff/rev#>  DESCRIBE ?x    WHERE   { <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/dataFromRatingSite1/Review717>               rev:reviewer  ?x   }     
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+Q17:
+  
+ PREFIX  bsbm: <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/> PREFIX  rev:  <http://purl.org/stuff/rev#> PREFIX  foaf: <http://xmlns.com/foaf/0.1/> PREFIX  dc:   <http://purl.org/dc/elements/1.1/>  SELECT  ?title ?text ?reviewDate ?reviewer ?reviewerName ?rating1 ?rating2 ?rating3 ?rating4    WHERE   { ?review  bsbm:reviewFor  <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/dataFromProducer1/Product32> ;              dc:title        ?title ;              rev:text        ?text     FILTER langMatches(lang(?text), "EN")     ?review   bsbm:reviewDate  ?reviewDate ;               rev:reviewer     ?reviewer .    ?reviewer  foaf:name       ?reviewerName     OPTIONAL       { ?review  bsbm:rating1  ?rating1 }     OPTIONAL       { ?review  bsbm:rating2  ?rating2 }     OPTIONAL       { ?review  bsbm:rating3  ?rating3 }     OPTIONAL       { ?review  bsbm:rating4  ?rating4 }   } ORDER BY DESC(?reviewDate) LIMIT   20       
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+PREFIX  rev:  <http://purl.org/stuff/rev#>  DESCRIBE ?x    WHERE   { <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/dataFromRatingSite1/Review659>               rev:reviewer  ?x   }     
+  
+
+PREFIX  rev:  <http://purl.org/stuff/rev#>  DESCRIBE ?x    WHERE   { <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/dataFromRatingSite1/Review525>               rev:reviewer  ?x   }     
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+Q18:
+ 
+ PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#> PREFIX  bsbm: <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/> PREFIX  dc:   <http://purl.org/dc/elements/1.1/>  SELECT DISTINCT  ?offer ?price    WHERE   { ?offer   bsbm:product       <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/dataFromProducer3/Product96> ;              bsbm:vendor        ?vendor ;              dc:publisher       ?vendor .    ?vendor  bsbm:country       <http://downlode.org/rdf/iso-3166/countries#US> .    ?offer   bsbm:deliveryDays  ?deliveryDays     FILTER ( ?deliveryDays <= 3 )     ?offer  bsbm:price    ?price ;             bsbm:validTo  ?date     FILTER ( ?date > "2008-06-20T00:00:00"^^xsd:dateTime )   } ORDER BY xsd:double(str(?price)) LIMIT   10     
+
+
+
+
+Q19:
+
+ PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#> PREFIX  bsbm: <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/> PREFIX  dc:   <http://purl.org/dc/elements/1.1/>  SELECT DISTINCT  ?offer ?price    WHERE   { ?offer   bsbm:product       <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/dataFromProducer1/Product40> ;              bsbm:vendor        ?vendor ;              dc:publisher       ?vendor .    ?vendor  bsbm:country       <http://downlode.org/rdf/iso-3166/countries#US> .    ?offer   bsbm:deliveryDays  ?deliveryDays     FILTER ( ?deliveryDays <= 3 )     ?offer  bsbm:price    ?price ;             bsbm:validTo  ?date     FILTER ( ?date > "2008-06-20T00:00:00"^^xsd:dateTime )   } ORDER BY xsd:double(str(?price)) LIMIT   10
+
+
+
+
+Q20:
+
+
+ SELECT  ?property ?hasValue ?isValueOf    WHERE   {   { <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/dataFromVendor1/Offer1250>                   ?property  ?hasValue       }     UNION       { ?isValueOf  ?property  <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/dataFromVendor1/Offer1250> }   }    
+
+--------------------
+exit;
+
+
+
+--------------------------------------
+
+
+ SELECT ?v0 ?v1 ?v2 WHERE {
+ 	?v0 <http://purl.org/ontology/mo/conductor> ?v1 .
+ 	?v0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?v2 .
+ 	?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/hasGenre> <http://db.uwaterloo.ca/~galuc/wsdbm/SubGenre89> .
+ }
+
+
+
+
+
+  
+ SELECT ?v0 ?v2 ?v3 WHERE {
+ 	?v0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://db.uwaterloo.ca/~galuc/wsdbm/ProductCategory9> .
+ 	?v0 <http://schema.org/description> ?v2 .
+ 	?v0 <http://schema.org/keywords> ?v3 .
+ 	?v0 <http://schema.org/language> <http://db.uwaterloo.ca/~galuc/wsdbm/Language0> .
+ }
+
+
+
+
+
+  
+ SELECT ?v0 ?v2 ?v3 ?v4 WHERE {
+ 	?v0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://db.uwaterloo.ca/~galuc/wsdbm/ProductCategory4> .
+ 	?v0 <http://schema.org/caption> ?v2 .
+ 	?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/hasGenre> ?v3 .
+ 	?v0 <http://schema.org/publisher> ?v4 .
+ }
+
+
+%---------------------
+
+
+
+  
+ SELECT ?v1 ?v2  WHERE {
+ 	<http://db.uwaterloo.ca/~galuc/wsdbm/Product8726> <http://schema.org/director> ?v1 .
+ 	?v1 <http://db.uwaterloo.ca/~galuc/wsdbm/follows> ?v2 .
+ }
+
+
+
+ SELECT ?v1 ?v2 WHERE {
+ 	<http://db.uwaterloo.ca/~galuc/wsdbm/Product24971> <http://purl.org/stuff/rev#hasReview> ?v1 .
+ 	?v1 <http://purl.org/stuff/rev#reviewer> ?v2 .
+ }
+
+  SELECT ?v1 ?v2 WHERE {
+ 	<http://db.uwaterloo.ca/~galuc/wsdbm/User80384> <http://db.uwaterloo.ca/~galuc/wsdbm/follows> ?v1 .
+ 	?v1 <http://db.uwaterloo.ca/~galuc/wsdbm/follows> ?v2 .
+ }
+	
+ 	
+
+
+
+
+
+%------------------------
+ SELECT ?v0 ?v2 ?v3 WHERE {
+ 	?v0 <http://xmlns.com/foaf/age> ?v4 .
+ 	?v0 <http://xmlns.com/foaf/familyName> ?v2 .
+ 	?v3 <http://purl.org/ontology/mo/artist> ?v0 .
+ 	
+ }
+
+
+ SELECT ?v0 ?v2 ?v3 WHERE {
+ 	?v0 <http://xmlns.com/foaf/age> ?v4 .
+ 	?v0 <http://xmlns.com/foaf/familyName> ?v2 .
+ 	?v3 <http://purl.org/ontology/mo/artist> ?v0 .
+ 	?v0 <http://schema.org/nationality> <http://db.uwaterloo.ca/~galuc/wsdbm/Country1> .
+ }
+
+
+
+
+------------------
+
+
+
+
+
+Q1:
+
+
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>PREFIX fd: <http://fishdelish.cs.man.ac.uk/rdf/vocab/resource1/> SELECT ?type ?species ?genus ?country WHERE   { ?nameID fd:comnames_ComName "Divided wrasse" . ?nameID fd:comnames_NameType ?type . ?nameID fd:comnames_SpecCode ?code . ?nameID fd:comnames_C_Code ?ccode . ?code fd:species_Species ?species . ?code fd:species_Genus ?genus . ?ccode fd:countref_PAESE ?country  .   }
+
+
+
+
+
+    
+ 
+
+
+
+
+
+Q2:
+
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>PREFIX fish: <http://fishdelish.cs.man.ac.uk/rdf/vocab/resource1/>  SELECT ?common ?code ?refno  ?author ?demerspelag ?anacat  ?family ?order ?class ?entered  ?pic ?picid ?description ?refauthor ?refyear  ?collaborator  ?comments     WHERE   {  ?x fish:species_Genus "Trimma" .  ?x fish:species_SpecCode ?code.  ?x fish:species_Species "striatum"  .   ?x fish:species_Comments ?comments .  OPTIONAL {?x fish:species_Author ?author}.  OPTIONAL {?x fish:species_FBname ?common}.  OPTIONAL {?x fish:species_SpeciesRefNo ?refno}.  OPTIONAL {?ref fish:refrens_RefNo ?refno}.  OPTIONAL {?ref fish:refrens_Author ?refauthor}.  OPTIONAL {?ref fish:refrens_Year ?refyear}.  OPTIONAL {?x fish:species_Comments ?biology.}  OPTIONAL {  ?x fish:species_FamCode ?famcode.  ?famcode fish:families_Family ?family.  ?famcode fish:families_Order ?order.  ?famcode fish:families_Class ?class.  }  OPTIONAL{?morph fish:morphdat_Speccode ?x.  ?morph fish:morphdat_AddChars ?description.}  OPTIONAL {?x fish:species_DemersPelag ?demerspelag.}  OPTIONAL {?x fish:species_AnaCat ?anacat.}  OPTIONAL {?x fish:species_PicPreferredName ?pic.  ?pic_node fish:picturesmain_SpecCode ?x.  ?pic_node fish:picturesmain_PicName ?pic.  ?pic_node fish:picturesmain_autoctr ?picid.  ?pic_node fish:picturesmain_Entered ?entered.  ?pic_node fish:picturesmain_AuthName ?collaborator.  }  }   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Q3:
+
+ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX fd: <http://fishdelish.cs.man.ac.uk/rdf/vocab/resource1/> SELECT ?species ?author ?family      WHERE   {  ?code fd:species_Species ?species .  ?code fd:species_Genus "Gobiodon" .  ?code fd:species_Author ?author .  ?code fd:species_FamCode ?fcode .  ?fcode fd:families_Family ?family .  }
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Q4:
+
+ 
+ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>  PREFIX fd: <http://fishdelish.cs.man.ac.uk/rdf/vocab/resource1/> SELECT ?genus ?author ?family     WHERE   {    ?code fd:species_Species "armatus" .  ?code fd:species_Genus ?genus .  ?code fd:species_Author ?author .  ?code fd:species_FamCode ?fcode .  ?fcode fd:families_Family ?family .  }     
+ 
+
+
+
+
+
+
+
+
+
+Q5:
+
+ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>  PREFIX fd: <http://fishdelish.cs.man.ac.uk/rdf/vocab/resource1/> SELECT ?order ?class ?noOfGenera ?noOfSpecies ?marine ?brackish ?freshwater   ?aquarium ?remark  ?division ?activityLevel ?author ?year  ?repguild  ?SpeciesCount     WHERE   {   ?familiesID fd:families_Family "Psettodidae" .   ?familiesID fd:families_Order ?order .   ?familiesID fd:families_Class ?class .      ?familiesID fd:families_SpeciesCount ?SpeciesCount .   ?familiesID fd:families_Genera ?noOfGenera .   ?familiesID fd:families_Species ?noOfSpecies .   ?familiesID fd:families_Marine ?marine .   ?familiesID fd:families_Brackish ?brackish .   ?familiesID fd:families_Freshwater ?freshwater .   ?familiesID fd:families_Aquarium ?aquarium .   ?familiesID fd:families_Remark ?remark .   ?familiesID fd:families_Remark ?remark .   ?familiesID fd:families_Division ?division .   ?familiesID fd:families_Activity ?activityLevel .   ?familiesID fd:families_ReprGuild ?repguild .   ?familiesID fd:families_FamiliesRefNo ?code .   ?x fd:refrens_RefNo ?code .   ?x fd:refrens_Author  ?author .   ?x fd:refrens_Year ?year .  }      
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Q6:
+
+ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>  PREFIX fd: <http://fishdelish.cs.man.ac.uk/rdf/vocab/resource1/> SELECT ?species ?genus ?author      WHERE   { ?SpeciesID fd:species_Author ?author ;  fd:species_Species ?species;  fd:species_Genus ?genus ;  fd:species_FamCode ?code .  ?code  fd:families_Family "Scatophagidae" .  }      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Q7:
+
+ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>  PREFIX fd: <http://fishdelish.cs.man.ac.uk/rdf/vocab/resource1/> SELECT ?species ?author ?genus      WHERE   { ?SpeciesID fd:species_Author ?author ;  fd:species_Species ?species;  fd:species_Genus ?genus ;  fd:species_FamCode ?code .  ?code  fd:families_Family "Citharinidae" .   }      
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+Q8:
+
+ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>  PREFIX fd: <http://fishdelish.cs.man.ac.uk/rdf/vocab/resource1/> SELECT ?genus ?species ?picture ?photographer     WHERE   {?picID fd:picturesmain_SpecCode ?code ;  fd:picturesmain_PicName ?picture ;   fd:picturesmain_AuthName ?photographer .  ?code fd:species_Species ?species;  fd:species_Genus ?genus ;  fd:species_FamCode ?fcode .  ?fcode fd:families_Family "Dactylopteridae" .  }      
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Q9:
+
+ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>  PREFIX fd: <http://fishdelish.cs.man.ac.uk/rdf/vocab/resource1/> SELECT ?prename ?surname  ?email ?webpage ?fax ?institute ?street ?city ?country ?comments ?keywords ?year     WHERE   {       ?x fd:collaborators_Personnel 647 .       OPTIONAL {?x fd:collaborators_Prename ?prename }.       OPTIONAL {?x fd:collaborators_Surname ?surname }.       OPTIONAL {?x fd:collaborators_E-mail ?email }.       OPTIONAL {?x fd:collaborators_StaffPhoto ?photo }.       OPTIONAL {?x fd:collaborators_WebPage ?webpage }.       OPTIONAL {?x fd:collaborators_FAX ?fax }.       OPTIONAL {?x fd:collaborators_Institute ?institute }.       OPTIONAL {?x fd:collaborators_Street ?street }.       OPTIONAL {?x fd:collaborators_City ?city }.       OPTIONAL {?x fd:collaborators_Country ?country }.       OPTIONAL {?x fd:collaborators_Comments ?comments }.       OPTIONAL {?x fd:collaborators_Keywords ?keywords }.       OPTIONAL {?x fd:collaborators_Year ?year }.  }
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Q10:
+
+ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>  PREFIX fd: <http://fishdelish.cs.man.ac.uk/rdf/vocab/resource1/> SELECT ?genus ?species ?photographer ?stage       WHERE   {   ?pcode fd:picturesmain_PicName "Anaus_u5.jpg" .   ?pcode fd:picturesmain_AuthName ?photographer .   ?pcode fd:picturesmain_LifeStage ?stage .   ?pcode fd:picturesmain_SpecCode ?scode .   ?scode fd:species_Genus ?genus .   ?scode fd:species_Species ?species .  }
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Q11:
+
+ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>  PREFIX fd: <http://fishdelish.cs.man.ac.uk/rdf/vocab/resource1/>SELECT ?order ?family ?genus ?species ?occurrence        WHERE   {    ?c fd:country_SpecCode ?x .     ?c fd:country_Status ?occurrence  .     ?c fd:country_C_Code ?cf  .     ?x fd:species_Genus ?genus  .     ?x fd:species_Species ?species  .     ?x fd:species_FamCode ?f  .     ?f fd:families_Family  ?family  .     ?f fd:families_Order ?order  .     ?cf fd:countref_PAESE "Kenya" .      }
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Q12
+
+ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>  PREFIX fd: <http://fishdelish.cs.man.ac.uk/rdf/vocab/resource1/> SELECT  ?freshwater ?marine ?brackish ?occurrence ?factbook    WHERE   { ?c fd:country_SpecCode ?x. ?c fd:country_Freshwater ?freshwater . ?c fd:country_Brackish ?brackish . ?c fd:country_Saltwater ?marine . ?c fd:country_Status ?occurrence . ?c fd:country_C_Code ?cf . ?x fd:species_Genus "Cobitis" . ?x fd:species_Species "taenia" . ?x fd:species_FamCode ?f . ?f fd:families_Family  ?family . ?f fd:families_Order ?order . ?cf fd:countref_PAESE "Iran" . ?cf fd:countref_Factbook ?factbook . }
+
+
+
+
+
+
+
+
+
+
+
+Q13:
+
+ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>  PREFIX fd: <http://fishdelish.cs.man.ac.uk/rdf/vocab/resource1/> SELECT ?order ?family ?genus ?species ?occurrence ?name      WHERE   {     ?nameID fd:comnames_ComName ?name  .     ?nameID fd:comnames_C_Code ?ccode .      ?nameID fd:comnames_SpecCode ?x .     ?x fd:species_Genus ?genus  .     ?x fd:species_Species ?species  .     ?x fd:species_FamCode ?f  .     ?f fd:families_Family  ?family  .     ?f fd:families_Order ?order  .     ?c fd:country_SpecCode ?x .     ?c fd:country_Status ?occurrence  .     ?c fd:country_Freshwater 1  .     ?c fd:country_C_Code ?cf  .     ?cf fd:countref_PAESE "Martinique" .       } 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Q14:
+
+ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>  PREFIX fd: <http://fishdelish.cs.man.ac.uk/rdf/vocab/resource1/> SELECT ?order ?family ?genus ?species ?name      WHERE   {     ?nameID fd:comnames_ComName ?name  .     ?nameID fd:comnames_C_Code ?ccode .      ?nameID fd:comnames_SpecCode ?x .     ?x fd:species_Genus ?genus  .     ?x fd:species_Species ?species  .     ?x fd:species_FamCode ?f  .     ?f fd:families_Family  ?family  .     ?f fd:families_Order ?order  .     ?c fd:country_SpecCode ?x .     ?c fd:country_Status "introduced"  .     ?c fd:country_C_Code ?cf  .     ?cf fd:countref_PAESE "Romania" .     } 
+
+
+
+
+
+
+
+Q15:
+
+
+
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>  PREFIX fd: <http://fishdelish.cs.man.ac.uk/rdf/vocab/resource1/> SELECT ?order ?family ?genus ?species ?name   WHERE   {     ?nameID fd:comnames_ComName ?name  .     ?nameID fd:comnames_C_Code ?ccode .      ?nameID fd:comnames_SpecCode ?x .     ?x fd:species_Genus ?genus  .     ?x fd:species_Species ?species  .     ?x fd:species_FamCode ?f  .     ?f fd:families_Family  ?family  .     ?f fd:families_Order ?order  .     ?c fd:country_SpecCode ?x .     ?c fd:country_Status "native"  .     ?c fd:country_C_Code ?cf  .     ?cf fd:countref_PAESE "Italy" .       }
+
+
+
+
+
+
+
+
+
+
+
+Q16:
+
+ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>  PREFIX fd: <http://fishdelish.cs.man.ac.uk/rdf/vocab/resource1/> SELECT ?order ?family ?genus ?species ?occurrence ?name ?dangerous      WHERE   {     ?nameID fd:comnames_ComName ?name  .     ?nameID fd:comnames_C_Code ?ccode .      ?nameID fd:comnames_SpecCode ?x .     ?x fd:species_Genus ?genus  .     ?x fd:species_Species ?species  .     ?x fd:species_Dangerous ?dangerous  .     ?x fd:species_DemersPelag "reef-associated"  .     ?x fd:species_FamCode ?f  .     ?f fd:families_Family  ?family  .     ?f  fd:families_Order ?order  .     ?c fd:country_SpecCode ?x .     ?c fd:country_Status ?occurrence  .     ?c fd:country_C_Code ?cf  .     ?cf fd:countref_PAESE "Italy" .     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Q17:
+
+ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>  PREFIX fd: <http://fishdelish.cs.man.ac.uk/rdf/vocab/resource1/> SELECT ?order ?family ?genus ?species ?occurrence ?name ?dangerous      WHERE   {     ?nameID fd:comnames_ComName ?name  .     ?nameID fd:comnames_C_Code ?ccode .      ?nameID fd:comnames_SpecCode ?x .     ?x fd:species_Genus ?genus  .     ?x fd:species_Species ?species  .     ?x fd:species_Dangerous ?dangerous  .     ?x fd:species_DemersPelag "pelagic"  .     ?x fd:species_FamCode ?f  .     ?f fd:families_Family  ?family  .     ?f  fd:families_Order ?order  .     ?c fd:country_SpecCode ?x .     ?c fd:country_Status ?occurrence  .     ?c fd:country_C_Code ?cf  .     ?cf fd:countref_PAESE "Kazakhstan" .    } 
+
+
+
+
+
+
+
+
+
+
+Q18:
+
+ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>  PREFIX fd: <http://fishdelish.cs.man.ac.uk/rdf/vocab/resource1/> SELECT ?order ?family ?genus ?species ?occurrence ?name ?gameref ?game      WHERE   {     ?nameID fd:comnames_ComName ?name  .     ?nameID fd:comnames_C_Code ?ccode .      ?nameID fd:comnames_SpecCode ?x .     ?x fd:species_Genus ?genus  .     ?x fd:species_Species ?species  .     ?x fd:species_GameFish ?game .   ?x fd:species_GameRef ?gameref  .     ?x fd:species_FamCode ?f  .     ?f fd:families_Family  ?family  .     ?f  fd:families_Order ?order  .     ?c fd:country_SpecCode ?x .     ?c fd:country_Status ?occurrence  .     ?c fd:country_C_Code ?cf  .     ?c fd:country_Game 1  .     ?cf fd:countref_PAESE "Spain" .    } 
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+Q19
+
+ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>  PREFIX fd: <http://fishdelish.cs.man.ac.uk/rdf/vocab/resource1/>SELECT ?order ?family ?genus ?species ?occurrence ?name         WHERE   {     ?nameID fd:comnames_ComName ?name  .     ?nameID fd:comnames_C_Code ?ccode .      ?nameID fd:comnames_SpecCode ?x .     ?x fd:species_Genus ?genus  .     ?x fd:species_Species ?species  .     ?x fd:species_FamCode ?f  .     ?f fd:families_Family  ?family  .     ?f  fd:families_Order ?order  .     ?c fd:country_SpecCode ?x .     ?c fd:country_Status ?occurrence  .     ?c fd:country_C_Code ?cf  .     ?c fd:country_Importance "minor commercial"  .     ?cf fd:countref_PAESE "Sierra Leone" .       } 
+
+ 
+
+
+
+
+
+
+
+
+
+
+Q20:
+
+ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>  PREFIX fd: <http://fishdelish.cs.man.ac.uk/rdf/vocab/resource1/> SELECT ?genus ?species ?occurrence ?speciesAquaculture      WHERE   {     ?nameID fd:comnames_ComName ?name  .     ?nameID fd:comnames_C_Code ?ccode .      ?nameID fd:comnames_SpecCode ?x .     ?x fd:species_Genus ?genus  .     ?x fd:species_Species ?species  .     ?x fd:species_UsedforAquaculture ?speciesAquaculture  .     ?c fd:country_SpecCode ?x .     ?c fd:country_Status ?occurrence  .     ?c fd:country_C_Code ?cf  .     ?c fd:country_Aquaculture "commercial"  .     ?cf fd:countref_PAESE "Mexico" .    }
+ 
+
+
+
+
+
+
+
+
+
+Q21:
+
+ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>  PREFIX fd: <http://fishdelish.cs.man.ac.uk/rdf/vocab/resource1/> SELECT ?genus ?species ?occurrence ?countryAquaculture       WHERE   {     ?x fd:species_Genus ?genus  .     ?x fd:species_Species ?species  .     ?x fd:species_UsedforAquaculture "commercial"  .     ?c fd:country_SpecCode ?x .     ?c fd:country_Status ?occurrence  .     ?c fd:country_C_Code ?cf  .     ?c fd:country_Aquaculture ?countryAquaculture  .     ?cf fd:countref_PAESE "Estonia" .    }
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Q22:
+
+ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>  PREFIX fd: <http://fishdelish.cs.man.ac.uk/rdf/vocab/resource1/> SELECT ?genus ?species ?occurrence ?aquarium      WHERE   {     ?x fd:species_Genus ?genus  .     ?x fd:species_Species ?species  .     ?x fd:species_Aquarium ?aquarium  .     ?c fd:country_SpecCode ?x .     ?c fd:country_Status ?occurrence  .     ?c fd:country_LiveExport "ornamental"  .     ?c fd:country_C_Code ?cf  .     ?cf fd:countref_PAESE "Mexico" .    }
+
+
+
+
+checkpoiny;
+shutdown;
+
+
+
+
+
+
+
+
+
+
+
+
+SPARQL PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>PREFIX fd: <http://fishdelish.cs.man.ac.uk/rdf/vocab/resource1/> SELECT ?a  FROM <http://fishdelish.cs.man.ac.uk#fish>   WHERE   {?a ?t ?b . ?b ?k ?c. ?c ?kk ?d.} limit 5;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

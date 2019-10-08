@@ -1,0 +1,959 @@
+/*
+**
+**#######################################################################
+**#	Query 1: Find products for a given set of generic features 	#
+**#######################################################################
+*/
+
+
+db.sub.find({_id:/Product/,"productPropertyNumeric1" : {$gt:136}, type: "ProductType8" , productFeature: {$all:["ProductFeature5","ProductFeature9"]} },{labe:1}).sort({label:1}).limit(10).comment("BSBM_Query1_Cold")
+
+
+db.sub.find({_id:/Product/,"productPropertyNumeric1" : {$gt:136}, type: "ProductType8" , productFeature: {$all:["ProductFeature5","ProductFeature9"]}},{labe:1}).sort({label:1}).limit(10).comment("BSBM_Query1_Warm")
+
+db.sub.find({_id:/Product/,"productPropertyNumeric1" : {$gt:136}, type: "ProductType8" , productFeature: {$all:["ProductFeature5","ProductFeature9"]}},{labe:1}).sort({label:1}).limit(10).comment("BSBM_Query1_Warm")
+
+db.sub.find({_id:/Product/,"productPropertyNumeric1" : {$gt:136}, type: "ProductType8" , productFeature: {$all:["ProductFeature5","ProductFeature9"]}},{labe:1}).sort({label:1}).limit(10).comment("BSBM_Query1_Warm")
+
+db.sub.find({_id:/Product/,"productPropertyNumeric1" : {$gt:136}, type: "ProductType8" , productFeature: {$all:["ProductFeature5","ProductFeature9"]}},{labe:1}).sort({label:1}).limit(10).comment("BSBM_Query1_Warm")
+
+
+
+
+
+-------------------------------------------------------------------------------------------------
+
+/*
+**
+**###############################################################################################
+**#	Query 2: Retrieve basic information about a specific product for display purposes	#
+**###############################################################################################
+*/
+
+
+db.sub.find({_id:"Product72"},{_id:0,label:1,comment:1,producer:1,productFeature:1,propertyTextual1:1,propertyTextual2:1,propertyTextual3:1,propertyNumeric1:1,propertyNumeric2:1,propertyTextual4:1,propertyTextual5:1,propertyNumeric4:1}).comment("BSBM_Query2_Cold")
+
+
+db.sub.find({_id:"Product72"},{_id:0,label:1,comment:1,producer:1,productFeature:1,propertyTextual1:1,propertyTextual2:1,propertyTextual3:1,propertyNumeric1:1,propertyNumeric2:1,propertyTextual4:1,propertyTextual5:1,propertyNumeric4:1}).comment("BSBM_Query2_Warm")
+
+db.sub.find({_id:"Product72"},{_id:0,label:1,comment:1,producer:1,productFeature:1,propertyTextual1:1,propertyTextual2:1,propertyTextual3:1,propertyNumeric1:1,propertyNumeric2:1,propertyTextual4:1,propertyTextual5:1,propertyNumeric4:1}).comment("BSBM_Query2_Warm")
+
+db.sub.find({_id:"Product72"},{_id:0,label:1,comment:1,producer:1,productFeature:1,propertyTextual1:1,propertyTextual2:1,propertyTextual3:1,propertyNumeric1:1,propertyNumeric2:1,propertyTextual4:1,propertyTextual5:1,propertyNumeric4:1}).comment("BSBM_Query2_Warm")
+
+db.sub.find({_id:"Product72"},{_id:0,label:1,comment:1,producer:1,productFeature:1,propertyTextual1:1,propertyTextual2:1,propertyTextual3:1,propertyNumeric1:1,propertyNumeric2:1,propertyTextual4:1,propertyTextual5:1,propertyNumeric4:1}).comment("BSBM_Query2_Warm")
+
+
+
+
+
+
+
+
+-------------------------------------------------------------------------------------------------
+
+/*
+**
+**###############################################################################################
+**#	Query 3: Find products having some specific features and not having one feature 	#
+**###############################################################################################
+*/
+
+Query 4
+
+
+db.sub.find({_id:/Product/, type: "ProductType12" , productPropertyNumeric1: {$gt: 156} , productPropertyNumeric3: {$lt: 152}, productFeature: {$all:["ProductFeature63"] , $nin:["ProductFeature53"]} },{_id:0,product:1,label:1}).sort({label:1}).limit(10).comment("BSBM_Query4_Cold")
+
+
+db.sub.find({_id:/Product/, type: "ProductType12" , productPropertyNumeric1: {$gt: 156} , productPropertyNumeric3: {$lt: 152}, productFeature: {$all:["ProductFeature63"] , $nin:["ProductFeature53"]} },{_id:0,product:1,label:1}).sort({label:1}).limit(10).comment("BSBM_Query4_Warm")
+
+
+db.sub.find({_id:/Product/, type: "ProductType12" , productPropertyNumeric1: {$gt: 156} , productPropertyNumeric3: {$lt: 152}, productFeature: {$all:["ProductFeature63"] , $nin:["ProductFeature53"]} },{_id:0,product:1,label:1}).sort({label:1}).limit(10).comment("BSBM_Query4_Warm")
+
+db.sub.find({_id:/Product/, type: "ProductType12" , productPropertyNumeric1: {$gt: 156} , productPropertyNumeric3: {$lt: 152}, productFeature: {$all:["ProductFeature63"] , $nin:["ProductFeature53"]} },{_id:0,product:1,label:1}).sort({label:1}).limit(10).comment("BSBM_Query4_Warm")
+
+
+db.sub.find({_id:/Product/, type: "ProductType12" , productPropertyNumeric1: {$gt: 156} , productPropertyNumeric3: {$lt: 152}, productFeature: {$all:["ProductFeature63"] , $nin:["ProductFeature53"]} },{_id:0,product:1,label:1}).sort({label:1}).limit(10).comment("BSBM_Query4_Warm")
+
+
+
+
+
+
+
+
+
+-------------------------------------------------------------------------------------------------
+/*
+**
+**###############################################################################################
+**#	Query 4: Find products matching two different sets of features				#
+**###############################################################################################
+*/
+
+Query 7
+
+
+
+
+db.sub.find( { $or:  [ {_id:/Product/, type: "ProductType7",productPropertyNumeric1:{$gt:457} , productFeature:{$all:["ProductFeature234","ProductFeature268"]}}    ,  {_id:/Product/, type: "ProductType7", productPropertyNumeric2:{$gt:488} , productFeature:{$all:["ProductFeature234","ProductFeature269"]}}  ]},{product:1, label:1, propertyTextual:1} ).sort({label:1}).skip(5).limit(10).comment("BSBM_Query7_Cold")
+
+
+db.sub.find( { $or:  [ {_id:/Product/, type: "ProductType7",productPropertyNumeric1:{$gt:457} , productFeature:{$all:["ProductFeature234","ProductFeature268"]}}    ,  {_id:/Product/, type: "ProductType7", productPropertyNumeric2:{$gt:488} , productFeature:{$all:["ProductFeature234","ProductFeature269"]}}  ]},{product:1, label:1, propertyTextual:1} ).sort({label:1}).skip(5).limit(10).comment("BSBM_Query7_Warm")
+
+db.sub.find( { $or:  [ {_id:/Product/, type: "ProductType7",productPropertyNumeric1:{$gt:457} , productFeature:{$all:["ProductFeature234","ProductFeature268"]}}    ,  {_id:/Product/, type: "ProductType7", productPropertyNumeric2:{$gt:488} , productFeature:{$all:["ProductFeature234","ProductFeature269"]}}  ]},{product:1, label:1, propertyTextual:1} ).sort({label:1}).skip(5).limit(10).comment("BSBM_Query7_Warm")
+
+db.sub.find( { $or:  [ {_id:/Product/, type: "ProductType7",productPropertyNumeric1:{$gt:457} , productFeature:{$all:["ProductFeature234","ProductFeature268"]}}    ,  {_id:/Product/, type: "ProductType7", productPropertyNumeric2:{$gt:488} , productFeature:{$all:["ProductFeature234","ProductFeature269"]}}  ]},{product:1, label:1, propertyTextual:1} ).sort({label:1}).skip(5).limit(10).comment("BSBM_Query7_Warm")
+
+db.sub.find( { $or:  [ {_id:/Product/, type: "ProductType7",productPropertyNumeric1:{$gt:457} , productFeature:{$all:["ProductFeature234","ProductFeature268"]}}    ,  {_id:/Product/, type: "ProductType7", productPropertyNumeric2:{$gt:488} , productFeature:{$all:["ProductFeature234","ProductFeature269"]}}  ]},{product:1, label:1, propertyTextual:1} ).sort({label:1}).skip(5).limit(10).comment("BSBM_Query7_Warm")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-------------------------------------------------------------------------------------------------
+
+
+/*
+**
+**###############################################################################################
+**#	Query 5: Find product that are similar to a given product				#
+**###############################################################################################
+*/
+
+Query 10
+
+
+var ProductXYZ = db.sub.find({_id:"Product90"},{productFeature:1,productPropertyNumeric1:1,productPropertyNumeric2:1, _id:0}).comment("BSBM_Query10_p1_Cold").toArray()
+
+
+
+db.sub.find( {$and:[{_id:/^Product/,productPropertyNumeric1: {$lt: (ProductXYZ[0].productPropertyNumeric1 + 120 )  }   },{_id:/^Product/, productPropertyNumeric1: {$gt: (ProductXYZ[0].productPropertyNumeric1 - 120 )  }   }  ],productFeature: {$in:ProductXYZ[0].productFeature},  $and:[{_id:/^Product/, productPropertyNumeric2: {$lt: (ProductXYZ[0].productPropertyNumeric2 + 170 )  }   },{_id:/^Product/, productPropertyNumeric2: {$gt: (ProductXYZ[0].productPropertyNumeric2 - 170 )  }   }  ]         },{product:1, label:1}  ).sort({label:1}).limit(5).comment("BSBM_Query10_P2_Cold")
+
+db.sub.find( {$and:[{_id:/^Product/,productPropertyNumeric1: {$lt: (ProductXYZ[0].productPropertyNumeric1 + 120 )  }   },{_id:/^Product/, productPropertyNumeric1: {$gt: (ProductXYZ[0].productPropertyNumeric1 - 120 )  }   }  ],productFeature: {$in:ProductXYZ[0].productFeature},  $and:[{_id:/^Product/, productPropertyNumeric2: {$lt: (ProductXYZ[0].productPropertyNumeric2 + 170 )  }   },{_id:/^Product/, productPropertyNumeric2: {$gt: (ProductXYZ[0].productPropertyNumeric1 - 170 )  }   }  ]         },{product:1, label:1}  ).sort({label:1}).limit(5).comment("BSBM_Query10_P2_Warm")
+
+db.sub.find( {$and:[{_id:/^Product/,productPropertyNumeric1: {$lt: (ProductXYZ[0].productPropertyNumeric1 + 120 )  }   },{_id:/^Product/, productPropertyNumeric1: {$gt: (ProductXYZ[0].productPropertyNumeric1 - 120 )  }   }  ],productFeature: {$in:ProductXYZ[0].productFeature},  $and:[{_id:/^Product/, productPropertyNumeric2: {$lt: (ProductXYZ[0].productPropertyNumeric2 + 170 )  }   },{_id:/^Product/, productPropertyNumeric2: {$gt: (ProductXYZ[0].productPropertyNumeric1 - 170 )  }   }  ]         },{product:1, label:1}  ).sort({label:1}).limit(5).comment("BSBM_Query10_P2_Warm")
+
+db.sub.find( {$and:[{_id:/^Product/,productPropertyNumeric1: {$lt: (ProductXYZ[0].productPropertyNumeric1 + 120 )  }   },{_id:/^Product/, productPropertyNumeric1: {$gt: (ProductXYZ[0].productPropertyNumeric1 - 120 )  }   }  ],productFeature: {$in:ProductXYZ[0].productFeature},  $and:[{_id:/^Product/, productPropertyNumeric2: {$lt: (ProductXYZ[0].productPropertyNumeric2 + 170 )  }   },{_id:/^Product/, productPropertyNumeric2: {$gt: (ProductXYZ[0].productPropertyNumeric1 - 170 )  }   }  ]         },{product:1, label:1}  ).sort({label:1}).limit(5).comment("BSBM_Query10_P2_Warm")
+
+db.sub.find( {$and:[{_id:/^Product/,productPropertyNumeric1: {$lt: (ProductXYZ[0].productPropertyNumeric1 + 120 )  }   },{_id:/^Product/, productPropertyNumeric1: {$gt: (ProductXYZ[0].productPropertyNumeric1 - 120 )  }   }  ],productFeature: {$in:ProductXYZ[0].productFeature},  $and:[{_id:/^Product/, productPropertyNumeric2: {$lt: (ProductXYZ[0].productPropertyNumeric2 + 170 )  }   },{_id:/^Product/, productPropertyNumeric2: {$gt: (ProductXYZ[0].productPropertyNumeric1 - 170 )  }   }  ]         },{product:1, label:1}  ).sort({label:1}).limit(5).comment("BSBM_Query10_P2_Warm")
+
+
+
+-------------------------------------------------------------------------------------------------
+
+
+/*
+**
+**####################################################################################################
+**#	Query 7: Retrieve in-depth information about a specific product including offers and reviews #
+**####################################################################################################
+*/
+
+
+Query 11
+
+
+var country_vendor = db.sub.find({ _id:/^Vendor/, country:"DE"}).comment("BSBM_Query11_P1").toArray()
+
+var vendor_country = country_vendor.map(function(x){return x._id})
+
+
+
+db.sub.find({$or: [{ $and:[{_id: /^Offer/},{product: "Product1"}], vendor :{$in:vendor_country },date:{$gt: new Date("2008-06-20T00:00:00.000Z") }  },{_id:/^Review/,reviewFor:"Product1"}] }  ).comment("BSBM_Query11_P2_Cold_Un")
+
+
+db.sub.find({$or: [{ $and:[{_id: /^Offer/},{product: "Product1"}], vendor :{$in:vendor_country },date:{$gt: new Date("2008-06-20T00:00:00.000Z") }  },{_id:/^Review/,reviewFor:"Product1"}] }  ).comment("BSBM_Query11_P2_Warm_Un")
+
+db.sub.find({$or: [{ $and:[{_id: /^Offer/},{product: "Product1"}], vendor :{$in:vendor_country },date:{$gt: new Date("2008-06-20T00:00:00.000Z") }  },{_id:/^Review/,reviewFor:"Product1"}] }  ).comment("BSBM_Query11_P2_Warm_Un")
+
+db.sub.find({$or: [{ $and:[{_id: /^Offer/},{product: "Product1"}], vendor :{$in:vendor_country },date:{$gt: new Date("2008-06-20T00:00:00.000Z") }  },{_id:/^Review/,reviewFor:"Product1"}] }  ).comment("BSBM_Query11_P2_Warm_Un")
+
+db.sub.find({$or: [{ $and:[{_id: /^Offer/},{product: "Product1"}], vendor :{$in:vendor_country },date:{$gt: new Date("2008-06-20T00:00:00.000Z") }  },{_id:/^Review/,reviewFor:"Product1"}] }  ).comment("BSBM_Query11_P2_Warm_Un")
+
+
+
+
+
+
+
+
+
+
+
+
+
+-------------------------------------------------------------------------------------------------
+/*
+**
+**#######################################################################################################
+**#	Query 8: Give me recent reviews in English for a specific product				#
+**#######################################################################################################
+*/
+
+
+Query 16
+
+
+db.sub.aggregate([{$match: { $and: [{_id:/^Review/,},{language:"en"},{reviewFor:"Product78"} ] , $comment :"BSBM_Query16_Cold" }  },  {$lookup:{from:"sub", localField:"reviewer",foreignField:"_id", as:"reviewer"  }},{$sort:{date:-1}},{$limit:20} ],{allowDiskUse: true})
+
+
+
+
+db.sub.aggregate([{$match: { $and: [{_id:/^Review/,},{language:"en"},{reviewFor:"Product78"} ] , $comment :"BSBM_Query16_Warm" }  },  {$lookup:{from:"sub", localField:"reviewer",foreignField:"_id", as:"reviewer"  }},{$sort:{date:-1}},{$limit:20} ],{allowDiskUse: true})
+
+db.sub.aggregate([{$match: { $and: [{_id:/^Review/,},{language:"en"},{reviewFor:"Product78"} ] , $comment :"BSBM_Query16_Warm" }  },  {$lookup:{from:"sub", localField:"reviewer",foreignField:"_id", as:"reviewer"  }},{$sort:{date:-1}},{$limit:20} ],{allowDiskUse: true})
+
+db.sub.aggregate([{$match: { $and: [{_id:/^Review/,},{language:"en"},{reviewFor:"Product78"} ] , $comment :"BSBM_Query16_Warm" }  },  {$lookup:{from:"sub", localField:"reviewer",foreignField:"_id", as:"reviewer"  }},{$sort:{date:-1}},{$limit:20} ],{allowDiskUse: true})
+
+db.sub.aggregate([{$match: { $and: [{_id:/^Review/,},{language:"en"},{reviewFor:"Product78"} ] , $comment :"BSBM_Query16_Warm" }  },  {$lookup:{from:"sub", localField:"reviewer",foreignField:"_id", as:"reviewer"  }},{$sort:{date:-1}},{$limit:20} ],{allowDiskUse: true})
+
+
+
+
+
+
+-------------------------------------------------------------------------------------------------
+
+
+/*
+**
+**#######################################################################################################
+**#	Query 10: Get offers for a given product which fulfill specific requirements			#
+**#######################################################################################################
+*/
+
+
+Query 18
+
+
+db.sub.find( { $and:[{_id: /^Offer/},{date:{$gt:new Date("2008-06-20T00:00:00Z")}},{deliveryDays:{$lte:3}}, {product:"Product96" }, {vendor :{$in: db.sub.find({ _id:/^Vendor/, country:"US"}).map(function(x){return x._id}) }}]  },{_id:0,offer:1, price:1}  ).sort({price:1}).limit(10).comment("BSBM_Query18_Cold")
+
+
+db.sub.find( { $and:[{_id: /^Offer/},{date:{$gt:new Date("2008-06-20T00:00:00Z")}},{deliveryDays:{$lte:3}}, {product:"Product96" }, {vendor :{$in: db.sub.find({ _id:/^Vendor/, country:"US"}).map(function(x){return x._id}) }}]  },{_id:0,offer:1, price:1}  ).sort({price:1}).limit(10).comment("BSBM_Query18_Warm")
+
+db.sub.find( { $and:[{_id: /^Offer/},{date:{$gt:new Date("2008-06-20T00:00:00Z")}},{deliveryDays:{$lte:3}}, {product:"Product96" }, {vendor :{$in: db.sub.find({ _id:/^Vendor/, country:"US"}).map(function(x){return x._id}) }}]  },{_id:0,offer:1, price:1}  ).sort({price:1}).limit(10).comment("BSBM_Query18_Warm")
+
+db.sub.find( { $and:[{_id: /^Offer/},{date:{$gt:new Date("2008-06-20T00:00:00Z")}},{deliveryDays:{$lte:3}}, {product:"Product96" }, {vendor :{$in: db.sub.find({ _id:/^Vendor/, country:"US"}).map(function(x){return x._id}) }}]  },{_id:0,offer:1, price:1}  ).sort({price:1}).limit(10).comment("BSBM_Query18_Warm")
+
+db.sub.find( { $and:[{_id: /^Offer/},{date:{$gt:new Date("2008-06-20T00:00:00Z")}},{deliveryDays:{$lte:3}}, {product:"Product96" }, {vendor :{$in: db.sub.find({ _id:/^Vendor/, country:"US"}).map(function(x){return x._id}) }}]  },{_id:0,offer:1, price:1}  ).sort({price:1}).limit(10).comment("BSBM_Query18_Warm")
+
+
+
+
+
+
+
+
+
+-------------------------------------------------------------------------------------------------
+/*
+**
+**#######################################################################################################
+**#	Query 11: Get all information about an offer		#
+**#######################################################################################################
+*/
+
+Query 20
+
+
+
+
+db.sub.aggregate([{$match: {_id:"Offer1250"  , $comment :"BSBM_Query20_Cold"}  },  {$lookup:{from:"sub", localField:"product",foreignField:"_id", as:"product"  }},{$project:{_id:0,deliveryDays:1,offerWebpage:1,price:1,"product._id":1,validTo:1, validFrom:1,vendor:1,type:1,publisher:1,date:1}} ],{allowDiskUse: true})
+
+
+db.sub.aggregate([{$match: {_id:"Offer1250"  , $comment :"BSBM_Query20_Warm"}  },  {$lookup:{from:"sub", localField:"product",foreignField:"_id", as:"product"  }},{$project:{_id:0,deliveryDays:1,offerWebpage:1,price:1,"product._id":1,validTo:1, validFrom:1,vendor:1,type:1,publisher:1,date:1}} ],{allowDiskUse: true})
+
+
+db.sub.aggregate([{$match: {_id:"Offer1250"  , $comment :"BSBM_Query20_Warm"}  },  {$lookup:{from:"sub", localField:"product",foreignField:"_id", as:"product"  }},{$project:{_id:0,deliveryDays:1,offerWebpage:1,price:1,"product._id":1,validTo:1, validFrom:1,vendor:1,type:1,publisher:1,date:1}} ],{allowDiskUse: true})
+
+
+db.sub.aggregate([{$match: {_id:"Offer1250"  , $comment :"BSBM_Query20_Warm"}  },  {$lookup:{from:"sub", localField:"product",foreignField:"_id", as:"product"  }},{$project:{_id:0,deliveryDays:1,offerWebpage:1,price:1,"product._id":1,validTo:1, validFrom:1,vendor:1,type:1,publisher:1,date:1}} ],{allowDiskUse: true})
+
+
+db.sub.aggregate([{$match: {_id:"Offer1250"  , $comment :"BSBM_Query20_Warm"}  },  {$lookup:{from:"sub", localField:"product",foreignField:"_id", as:"product"  }},{$project:{_id:0,deliveryDays:1,offerWebpage:1,price:1,"product._id":1,validTo:1, validFrom:1,vendor:1,type:1,publisher:1,date:1}} ],{allowDiskUse: true})
+
+
+
+
+
+#####################################################################
+
+
+
+Q1
+db.sub.find({product:/Product/,"productPropertyNumeric1" : {$gt:136}, type: "ProductType8"},{labe:1}).sort({label:1}).limit(10).comment("BSBM_Query1_Cold")
+
+
+Q2
+db.sub.find({product:"Product72"}).comment("BSBM_Query2_Cold")
+
+
+
+Q3
+db.sub.find({product:/Product/,"productPropertyNumeric1" : {$gt:156}, type: "ProductType12"},{labe:1}).sort({label:1}).limit(10).comment("BSBM_Query1_Cold")
+
+
+
+Q7
+db.sub.find( { $or:  [ {product:/Product/, type: "ProductType7",productPropertyNumeric1:{$gt:457}  }    ,  {product:/Product/, type: "ProductType7", productPropertyNumeric2:{$gt:488} }  ]} ).sort({label:1}).skip(5).limit(10).comment("BSBM_Query7_Cold")
+
+
+Q8
+db.sub.find({country : "DE", reviewer:{$exists:true}}).comment("BSBM_Query1_Cold")
+
+
+
+Q10
+db.sub.find( { $and:[{product:"Product96" }, {vendor :{$in: db.sub.find({ _id:/^Vendor/, country:"US"}).map(function(x){return x._id}) }}   ]  },{_id:0,offer:1, price:1}  ).sort({price:1}).limit(10).comment("BSBM_Query18_Cold")
+
+
+Q11
+db.sub.find({start:"Offer1250"}).comment("BSBM_Query2_Cold")
+
+
+
+
+######################################
+		SNV - Couchbase
+######################################
+
+select idPrimaryKey, `conductor`, `type`
+from tenwatdiv
+where
+hasgenre = "subgenre89"
+and `conductor` is not missing
+and `type` is not MISSING
+
+
+
+select idPrimaryKey, `description`, `keywords`
+from tenwatdiv
+where
+`type` = "productcategory9"
+and `description` is not missing
+and `keywords` is not missing
+and language = "language0"
+
+
+
+select idPrimaryKey, `caption`, hasgenre, publisher
+from tenwatdiv
+where
+`type` = "productcategory4"
+and `caption` is not missing
+and hasgenre is not missing
+and publisher is not missing
+
+-----------------------------------
+
+select *
+from tenwatdiv t1 join tenwatdiv t2 on t1.director=t2.idPrimaryKey
+join tenwatdiv t3 on t2.follows=t3.idPrimaryKey
+where t1.idPrimaryKey = "product8726"
+
+
+
+select *
+from tenwatdiv t1 join tenwatdiv t2 on t1.hasreview=t2.idPrimaryKey
+join tenwatdiv t3 on t2.reviewer=t3.idPrimaryKey
+where t1.idPrimaryKey = "product24971"
+
+
+select *
+from tenwatdiv t1 join tenwatdiv t2 on t1.follows=t2.idPrimaryKey
+join tenwatdiv t3 on t2.follows=t3.idPrimaryKey
+where t1.idPrimaryKey = "user80384"
+
+
+----------------------------------------
+
+
+select t2.type, t2.title, t2.idPrimaryKey
+from tenwatdiv t1 join tenwatdiv t2 on t1.likes=t2.idPrimaryKey
+where t1.idPrimaryKey = "user51774"
+
+
+select t2.idPrimaryKey, t2.familyname, t2.age
+from tenwatdiv t1 join tenwatdiv t2 on t1.artist=t2.idPrimaryKey
+
+
+
+select t2.idPrimaryKey, t2.familyname, t2.age
+from tenwatdiv t1 join tenwatdiv t2 on t1.artist=t2.idPrimaryKey
+where
+t2.nationality = "country1"
+
+
+
+######################################
+		chain
+######################################
+
+
+select *
+from tenwatdivchain
+where
+hasGenre = "SubGenre89"
+
+
+select *
+from tenwatdivchain
+where
+type = "ProductCategory9"
+and language is not missing;  --without an index on language is even faster.
+
+
+select *
+from tenwatdivchain
+where
+type = "ProductCategory4"
+and caption is not missing
+
+--------------------------------------------------
+
+select *
+from tenwatdivchain
+where `start` = "Product8726"
+and `director` is not missing
+
+
+select *
+from tenwatdivchain
+where `start` = "Product24971"
+and hasReview is not missing
+
+
+select *
+from tenwatdivchain
+where `start` = "User80384"
+and follows is not missing
+
+
+---------------------------------
+
+select artist, familyName, idPrimaryKey
+from tenwatdivchain
+where
+ artist is not missing
+ and age is not missing
+ and familyName is not missing
+ 
+ 
+
+select *
+from tenwatdivchain
+where
+ artist is not missing
+ and age is not missing
+ and nationality = "Country1"
+
+
+
+
+---------------
+#################################################################################
+				SNV
+#################################################################################				
+Q1:
+select label
+from tenbsbmsnv
+where idPrimaryKey like "Product%"
+and productPropertyNumeric1 > 136
+and `type` = "ProductType8"
+and any v in productFeature SATISFIES v in ["ProductFeature40" , "ProductFeature43"]  end
+order by label
+limit 10
+
+
+Q2:
+select label,comment,producer,productFeature,productPropertyTextual1,productPropertyTextual2,productPropertyTextual3,productPropertyNumeric1,productPropertyNumeric2,productPropertyTextual4,productPropertyTextual5,productPropertyNumeric4
+from tenbsbmsnv
+where idPrimaryKey = "Product72"
+
+
+
+Q3 (4):
+select product,label
+from tenbsbmsnv
+where idPrimaryKey like "Product%"
+and productPropertyNumeric1 > 156
+and productPropertyNumeric3 > 152
+and `type` = "ProductType12"
+and any v in productFeature SATISFIES v in ["ProductFeature63"]  end
+and any g in productFeature SATISFIES g not in ["ProductFeature53"]  end
+order by label
+limit 10
+
+
+
+Q4 (7):
+select product,label,productPropertyTextual1
+from tenbsbmsnv
+where (idPrimaryKey like "Product%"
+and productPropertyNumeric1 > 457
+and `type` = "ProductType7"
+and any v in productFeature SATISFIES v in ["ProductFeature234","ProductFeature269"]  end)
+or
+(idPrimaryKey like "Product%"
+and productPropertyNumeric2 > 488
+and `type` = "ProductType7"
+and any v in productFeature SATISFIES v in ["ProductFeature234","ProductFeature269"]  end)
+order by label
+offset 5
+limit 10
+
+
+
+
+Q5 (10):
+select b1.idPrimaryKey, b1.label
+from tenbsbmsnv b1
+where
+b1.idPrimaryKey like "Product%"
+and b1.productPropertyNumeric1 < ((select raw b2.productPropertyNumeric1 from tenbsbmsnv b2 where idPrimaryKey = "Product90")[0] + 120)
+and b1.productPropertyNumeric1 > ((select raw b2.productPropertyNumeric1 from tenbsbmsnv b2 where idPrimaryKey = "Product90")[0] - 120)
+and any v in b1.productFeature SATISFIES v in (select raw b2.productFeature from tenbsbmsnv b2 where idPrimaryKey = "Product90")[0] end
+and b1.productPropertyNumeric2 < ((select raw b2.productPropertyNumeric2 from tenbsbmsnv b2 where idPrimaryKey = "Product90")[0] + 170)
+and b1.productPropertyNumeric2 > ((select raw b2.productPropertyNumeric2 from tenbsbmsnv b2 where idPrimaryKey = "Product90")[0] - 170)
+order by b1.label
+limit 5
+
+
+
+Q7 (11)
+select b1.*
+from tenbsbmsnv as b1
+where
+(b1.idPrimaryKey like "Offer%"
+and b1.product = "Product1"
+and b1.vendor in (select raw b2.country from tenbsbmsnv b2 where b2.idPrimaryKey like "Vendor%" and b2.country = "DE")
+and b1.date >  "2008-06-20T00:00:00.000Z")
+or
+(b1.idPrimaryKey like "Review%"
+and b1.reviewFor = "Product1"
+)
+
+
+Q10 (18)
+select *
+from tenbsbmsnv b1 join tenbsbmsnv b2
+on b1.reviewer= b2.idPrimaryKey
+where
+b1.idPrimaryKey like "Review%"
+and b1.reviewFor = "Product78"
+
+
+Q10
+select  b1.idPrimaryKey, b1.price
+from tenbsbmsnv b1 
+where
+b1.idPrimaryKey like "Offer%"
+and b1.date > "2008-06-20T00:00:00Z"
+and b1.deliveryDays <= 3
+and b1.product = "Product96"
+and b1.vendor in (select raw b2.idPrimaryKey from tenbsbmsnv b2 where b2.idPrimaryKey like "Vendor%" and b2.country = "US")
+
+
+
+Q11 (20)
+
+select *
+from tenbsbmsnv b1 join tenbsbmsnv b2
+on b1.product= b2.idPrimaryKey
+where
+b1.idPrimaryKey = "Offer1250"
+
+
+
+
+#################################################################################
+				Chain
+#################################################################################				
+
+Q1:
+select label
+from tenbsbmchain
+where product like "Product%"
+and productPropertyNumeric1 > 136
+and `type` = "ProductType8"
+order by label
+limit 10
+
+
+
+
+Q2:
+select *
+from tenbsbmchain
+where product = "Product72"
+**limit 1
+
+
+
+
+
+Q3: (4)
+select label
+from tenbsbmchain
+where product like "Product%"
+and productPropertyNumeric1 > 156
+and `type` = "ProductType12"
+order by label
+limit 10
+
+
+
+
+
+
+
+
+
+
+Q7:
+select product,label,productPropertyTextual1
+from tenbsbmsnv
+where (product like "Product%"
+and productPropertyNumeric1 > 457
+and `type` = "ProductType7"
+)
+or
+(product like "Product%"
+and productPropertyNumeric2 > 488
+and `type` = "ProductType7"
+)
+order by label
+offset 5
+limit 10
+
+
+
+
+
+
+
+
+
+
+
+Q5 (10):
+select b1.product, b1.label
+from tenbsbmchain b1
+where
+b1.product like "Product%"
+and b1.productPropertyNumeric1 < ((select raw b2.productPropertyNumeric1 from tenbsbmchain b2 where product = "Product90")[1] + 120)
+and b1.productPropertyNumeric1 > ((select raw b2.productPropertyNumeric1 from tenbsbmchain b2 where product = "Product90")[1] - 120)
+and b1.productPropertyNumeric2 < ((select raw b2.productPropertyNumeric2 from tenbsbmchain b2 where product = "Product90")[1] + 170)
+and b1.productPropertyNumeric2 > ((select raw b2.productPropertyNumeric2 from tenbsbmchain b2 where product = "Product90")[1] - 170)
+order by b1.label
+limit 5
+
+
+
+
+
+
+
+
+
+
+
+
+Q7 (11):
+select *
+from tenbsbmchain b1
+where
+(b1.product = "Product1"
+and b1.vendor in (select b2.vendor from tenbsbmchain b2 where b2.country = "DE"))
+or
+(b1.reviewFor =  "Product1")
+
+
+Q8 (16):
+select *
+from tenbsbmchain
+where
+country = "DE"
+and reviewer is not MISSING;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Q10 (18):
+select *
+from tenbsbmchain b1
+where
+(b1.product = "Product96"
+and b1.vendor in (select b2.vendor from tenbsbmchain b2 where b2.country = "US"))
+
+
+
+
+
+
+
+Q11 (20)
+select *
+from tenbsbmchain b1
+where
+`start` = "Offer1250"
+
+
+
+#################################################################################
+				DT
+#################################################################################				
+
+Q1:
+select t2 from (SELECT raw ARRAY_AGG({tenbsbmdl.Predicate : `tenbsbmdl`.`Object`})
+from tenbsbmdl
+where Subject like "Product%") as t1
+unnest t1 as t2
+where
+any v in t2.productFeature SATISFIES v in ["ProductFeature40" , "ProductFeature43"]  end
+and t2.`type` = "ProductType8"
+and t2.productPropertyNumeric1 >136
+order by t2.label
+limit 10
+
+
+Q2:
+select * from (SELECT raw ARRAY_AGG({tenbsbmdl.Predicate : `tenbsbmdl`.`Object`})
+from tenbsbmdl
+where Subject like "Product123") as t1
+
+
+
+Q3 (4):
+select t2 from (SELECT raw ARRAY_AGG({tenbsbmdl.Predicate : `tenbsbmdl`.`Object`})
+from tenbsbmdl
+where Subject like "Product%") as t1
+unnest t1 as t2
+where
+t2.productPropertyNumeric1 > 156
+and t2.productPropertyNumeric3 > 152
+and t2.`type` = "ProductType12"
+and any v in t2.productFeature SATISFIES v in ["ProductFeature63"]  end
+and any g in t2.productFeature SATISFIES g not in ["ProductFeature53"]  end
+order by t2.label
+limit 10
+
+
+Q4 (7):
+select t2 from (SELECT raw ARRAY_AGG({tenbsbmdl.Predicate : `tenbsbmdl`.`Object`})
+from tenbsbmdl
+where Subject like "Product%") as t1
+unnest t1 as t2
+where
+(t2.productPropertyNumeric1 > 457
+and t2.`type` = "ProductType7"
+and any v in t2.productFeature SATISFIES v in ["ProductFeature234","ProductFeature269"]  end)
+or
+(t2.productPropertyNumeric2 > 488
+and t2.`type` = "ProductType7"
+and any v in t2.productFeature SATISFIES v in ["ProductFeature234","ProductFeature269"]  end)
+order by t2.label
+offset 5
+limit 10
+
+
+
+Q5 (10):
+select * from (SELECT raw ARRAY_AGG({tenbsbmdl.Predicate : `tenbsbmdl`.`Object`})
+from tenbsbmdl
+where Subject like "Product%") as t1
+unnest t1 as t2
+where
+t2.productPropertyNumeric1 < ((select raw t4.productPropertyNumeric1  from (SELECT raw ARRAY_AGG({t5.Predicate : t5.`Object`})
+from tenbsbmdl t5
+where Subject = "Product90") as t3
+unnest t3 as t4
+where t4.productPropertyNumeric1 is not missing)[0] + 120)
+and
+t2.productPropertyNumeric1 > ((select raw t4.productPropertyNumeric1  from (SELECT raw ARRAY_AGG({t5.Predicate : t5.`Object`})
+from tenbsbmdl t5
+where Subject = "Product90") as t3
+unnest t3 as t4
+where t4.productPropertyNumeric1 is not missing)[0] - 120)
+and
+t2.productPropertyNumeric2 < ((select raw t4.productPropertyNumeric2  from (SELECT raw ARRAY_AGG({t5.Predicate : t5.`Object`})
+from tenbsbmdl t5
+where Subject = "Product90") as t3
+unnest t3 as t4
+where t4.productPropertyNumeric2 is not missing)[0] + 170)
+and
+t2.productPropertyNumeric2 > ((select raw t4.productPropertyNumeric2  from (SELECT raw ARRAY_AGG({t5.Predicate : t5.`Object`})
+from tenbsbmdl t5
+where Subject = "Product90") as t3
+unnest t3 as t4
+where t4.productPropertyNumeric2 is not missing)[0] - 170)
+
+
+
+
+
+
+
+
+
+Q7 (11)
+select * from (SELECT raw ARRAY_AGG({tenbsbmdl.Predicate : `tenbsbmdl`.`Object`})
+from tenbsbmdl
+where Subject like "Offer%%") as t1
+unnest t1 as t2
+where
+(t2.product = "Product1"
+and
+t2.vendor < ((select raw t4.country  from (SELECT raw ARRAY_AGG({t5.Predicate : t5.`Object`})
+from tenbsbmdl t5
+where Subject like "Vendor%" and country="DE") as t3
+unnest t3 as t4
+where t4.country is not missing)[0] + 120)
+and t2.date >  "2008-06-20T00:00:00.000Z")
+or
+(t2.Subject like "Review%"
+and t2.reviewFor = "Product1")
+
+
+
+Q10 (18)
+select * from (SELECT raw ARRAY_AGG({tenbsbmdl.Predicate : `tenbsbmdl`.`Object`})
+from tenbsbmdl
+where Subject like "Review%") as t1
+unnest t1 as t2
+where
+t2.reviewFor = "Product78"
+
+
+
+
+
+
+
+
+select * from (SELECT raw ARRAY_AGG({tenbsbmdl.Predicate : `tenbsbmdl`.`Object`})
+from tenbsbmdl
+where Subject like "Offer%") as t1
+unnest t1 as t2
+where
+t2.date > "2008-06-20T00:00:00Z"
+and t2.deliveryDays <= 3
+and t2.product = "Product96"
+and t2.vendor in (select raw t4.Subject  from (SELECT raw ARRAY_AGG({t5.Predicate : t5.`Object`})
+from tenbsbmdl t5
+where Subject like "Vendor%" and country="US") as t3
+unnest t3 as t4
+where t4.country is not missing)[0]
+
+
+
+
+
+
+
+
+
+Q11 (20)
+
+select * from (SELECT raw ARRAY_AGG({tenbsbmdl.Predicate : `tenbsbmdl`.`Object`})
+from tenbsbmdl
+where Subject like "Offer125") as t1 join tenbsbmdl t2 on t1.product = t2.Subject
+
+
+
+
+---------------------
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+MongoDB
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Q1:
+
+
+db.sub.aggregate([{$match:{"comnames_ComName" : "Divided wrase ." ,$comment:"IXFish_one_cold" }} , {$lookup:{from:"sub", localField:"comnames_C_Code" ,foreignField:"idPrimaryKey", as:"J" }},{$lookup:{from:"sub", localField:"comnames_SpecCode" ,foreignField:"idPrimaryKey", as:"K" }}, {$project:{_id:0,comnames_NameType:1,"K.species_Genus":1,"K.species_Species":1,"J.countref_PAESE":1,}} ])
+
+
+
+
+Q3:
+
+
+db.sub.aggregate([{$match:{"label" : /Gobiodon/ ,$comment:"IXFish_three_cold" }} , {$lookup:{from:"sub", localField:"species_FamCode" ,foreignField:"idPrimaryKey", as:"J" }}, {$project:{_id:0,idPrimaryKey:1, species_Author:1,"K.species_Genus":1,"J.families_Family":1,}} ])
+
+
+Q4:
+
+db.sub.aggregate([{$match:{"species_Species":"armats ." , $comment:"IXFish_four_cold" }} , {$lookup:{from:"sub", localField:"species_FamCode" ,foreignField:"idPrimaryKey", as:"J" }}, {$project:{_id:0,species_Genus:1, species_Author:1,"J.families_Family":1,}} ])
+
+
+
+
+Q5:
+
+db.sub.aggregate([{$match:{idPrimaryKey:"Psettodidae" , $comment:"IXFish_five_cold"}},{$lookup:{from:"sub", localField:"families_FamiliesRefNo" ,foreignField:"refrens_RefNo", as:"J" }} ,{$project:{ families_Order:1, families_Class:1, families_SpeciesCount:1, families_Genera:1, families_Species:1, families_Marine:1, families_Brackish:1, families_Freshwater:1, families_Aquarium:1, families_Remark:1, families_Remark:1, families_Division:1, families_Activity:1, families_ReprGuild:1, "J.refrens_RefNo":1, "J.refrens_Author":1, "J.refrens_Year":1 }}])
+
+
+
+
+Q12:
+db.sub.aggregate([{$match:{$or:[  {country_SpecCode:{$exists:true}} , { $and:[{species_Genus: "Cobits ."} ,  {species_Species: "taena ."}] } ] ,$comment:"Fish_Query12_cold"} } ,{ $lookup:{from:"sub", localField:"country_SpecCode" ,foreignField:"idPrimaryKey", as:"J" }  }  ,{ $lookup:{from:"sub", localField:"country_C_Code" ,foreignField:"idPrimaryKey", as:"K" } },{$match:{ "J.species_Genus": "Cobits ." ,  "J.species_Species": "taena ." ,"K.countref_PAESE":"Irn ."}},{$project:{_id:0,country_Brackish:1,country_Saltwater:1,country_Status:1,"K.countref_Factbook":1, country_Saltwater:1}}  ] )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
