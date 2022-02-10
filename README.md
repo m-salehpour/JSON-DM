@@ -3,3 +3,8 @@ This code base is part of a research project to explore the effects of different
 
 Please note that to run the parsers, it is needed to set the path of input RDF/N-Triples KG dataset within the source code. The parser can be compiled using GNU C++ Compiler, e.g., g++ -std=c++11 SNV.cpp -o runSNV (e.g., SNV.cpp is the developed parser to generate the Subject-based Name/Value (SNV) representation of a given KG).
 
+
+# Authors
+* Masoud Salehpour (University of Sydney)
+* Joseph G. Davis  (University of Sydney)
+
